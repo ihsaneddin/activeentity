@@ -298,7 +298,7 @@ module ActiveEntity
 
       def _ensure_no_duplicate_errors
         errors.messages.each_key do |attribute|
-          errors[attribute].uniq!
+          #errors[attribute].uniq!
         end
       end
   end
