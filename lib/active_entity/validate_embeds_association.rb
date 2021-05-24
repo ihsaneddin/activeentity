@@ -270,8 +270,7 @@ module ActiveEntity
 
           record.errors.each do |attribute, message|
             attribute = normalize_reflection_attribute(indexed_attribute, reflection, index, attribute)
-            #errors[attribute] << message
-            errors.add(attribute, message)
+            errors[attribute] << message
             #errors[attribute].uniq!
           end
 
@@ -280,8 +279,7 @@ module ActiveEntity
               normalize_reflection_attribute(indexed_attribute, reflection, index, attribute).to_sym
 
             record.errors.details[attribute].each do |error|
-              #errors.details[reflection_attribute] << error
-              errors.add(reflection_attribute, error)
+              errors.details[reflection_attribute] << error
               #errors.details[reflection_attribute].uniq!
             end
           end
